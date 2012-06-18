@@ -21,7 +21,6 @@ describe User do
       page.should have_content("Email can't be blank")
       page.should have_content("Password is too short (minimum is 6 characters)")
       page.should have_content("Password doesn't match confirmation")
-
     end
   end
 end

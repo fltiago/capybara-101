@@ -19,7 +19,7 @@
       <li>
         <%= friend.email %> |
         <%= link_to "Accept Friend",
-        friendships_create_path(:friend_id => friend.id), :id => friend.id,
+        friendships_create_path(:friend_id => friend.id, :create_friend => false), :id => friend.id,
         :remote => true, :method => :post %> |
         <%= link_to "Deny Friend",
         friendships_destroy_path(:friend_id => friend.id), :id => friend.id,

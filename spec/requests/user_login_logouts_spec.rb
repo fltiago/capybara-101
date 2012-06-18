@@ -1,11 +1,6 @@
 require 'spec_helper'
-include Warden::Test::Helpers
 
 describe "UserLoginLogouts" do
-  before do
-    Warden.test_mode!
-  end
-
   describe "GET users/sign_in" do
     it "sign in a application" do
       user = Factory(:user, :email => "goku@dragonball.com", :password => "gohan-sun")

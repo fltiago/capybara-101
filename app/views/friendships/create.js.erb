@@ -1,0 +1,8 @@
+<% if @create_friend %>
+  var newFriend = "<p>Waiting approval</p>";
+  $("#<%= @friend.id  %>").after(newFriend);
+  $("#<%= @friend.id %>").remove();
+<% else %>
+  $("#<%= @friend.id %>").replaceWith("Friend");
+<% end %>
+

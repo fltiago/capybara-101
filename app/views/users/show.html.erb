@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+  <%= current_user.email %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+<h1><%= @user.email %></h1>
+<div>
+
+  <% if current_user.friends?(@user) %>
+    <p>
+      Friends
+    </p>
+  <% elsif @friendship %>
+    <p>
+      Waiting approval
+    </p>
+  <% else %>
+    <%= link_to "Add Friend", friendships_create_path(:friend_id => @user.id, :create_friend => true), :id => @user.id, :method => :post, :remote => :true %>
+  <% end %>
+
+</div>
+

@@ -1,4 +1,15 @@
 Capybara101::Application.routes.draw do
+
+  post "friendships/create"
+
+  delete "friendships/destroy"
+
+  devise_for :users
+
+  resources :users, :only => [:index, :show]
+
+  root :to => "users#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
